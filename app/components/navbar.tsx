@@ -3,7 +3,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaCar, FaMapMarkedAlt, FaTaxi } from "react-icons/fa";
 import { FaHouseChimney } from "react-icons/fa6";
@@ -17,7 +23,7 @@ export default function NavBar() {
         <div>
           <Link href="/">
             <Image
-              src={'/logo.svg'}
+              src={"/logo.svg"}
               alt="Logo"
               width={140}
               height={100}
@@ -51,7 +57,9 @@ export default function NavBar() {
         </div>
         <div className=" flex-col hidden sm:flex">
           <SignedOut>
-            <SignInButton />
+            <div className="bg-[#2167f1] cursor-pointer text-white px-4 py-2 rounded-full">
+              <SignInButton /> / <SignUpButton />
+            </div>
           </SignedOut>
           <SignedIn>
             <UserButton showName />
@@ -76,7 +84,7 @@ export default function NavBar() {
         <div>
           <Link href="/">
             <Image
-              src={'/logo.svg'}
+              src={"/logo.svg"}
               alt="Logo"
               width={130}
               height={100}
@@ -114,7 +122,9 @@ export default function NavBar() {
         </div>
         <div className="flex-col py-4 flex sm:hidden">
           <SignedOut>
-            <SignInButton />
+            <div className="bg-gray-900 text-white px-4 py-2 rounded-full">
+              <SignInButton /> / <SignUpButton />
+            </div>
           </SignedOut>
           <SignedIn>
             <UserButton showName />
