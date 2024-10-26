@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiTalk } from "react-icons/gi";
 import {
   SignedIn,
   SignedOut,
@@ -11,7 +11,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { IoCloseSharp } from "react-icons/io5";
-import { FaCar, FaMapMarkedAlt, FaTaxi } from "react-icons/fa";
+import { FaCar, FaInfoCircle, FaMapMarkedAlt, FaTaxi } from "react-icons/fa";
 import { FaHouseChimney } from "react-icons/fa6";
 
 export default function NavBar() {
@@ -51,6 +51,16 @@ export default function NavBar() {
             <Link href="/taxi">
               <li className="mr-9 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
                 Taxi
+              </li>
+            </Link>
+            <Link href="/about">
+              <li className="mr-9 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
+                About
+              </li>
+            </Link>
+            <Link href="/contact">
+              <li className="mr-9 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
+                Contact Us
               </li>
             </Link>
           </ul>
@@ -116,6 +126,18 @@ export default function NavBar() {
               <FaTaxi />
               <li className="mr-9 py-4 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
                 Taxi
+              </li>
+            </Link>
+            <Link href="/about" className="flex gap-3 items-center">
+            <FaInfoCircle />
+              <li className="mr-9 py-4 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
+                About
+              </li>
+            </Link>
+            <Link href="/contact" className="flex gap-3 items-center">
+            <GiTalk />
+              <li className="mr-9 py-4 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
+                Contact Us
               </li>
             </Link>
           </ul>
