@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function Carform({ car }: any) {
   const [formValue, setFormValue] = useState<any>({
@@ -8,7 +9,7 @@ function Carform({ car }: any) {
     email: "",
     pickup: "",
     dropoff: "",
-    carname: ""
+    carname: "",
   });
 
   const handlechange = (event: any) => {
@@ -16,13 +17,13 @@ function Carform({ car }: any) {
       setFormValue({
         ...formValue,
         [event.target.name]: event.target.value,
+        carname: car.carname,
       });
     }
   };
-
+  const router = useRouter();
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-
     try {
       const response = await fetch("api/cars", {
         method: "POST",
@@ -34,6 +35,7 @@ function Carform({ car }: any) {
     } catch (error) {
       console.error("Error:", error);
     }
+    router.push("/thankyou");
   };
 
   return (
@@ -78,8 +80,8 @@ function Carform({ car }: any) {
       <div className="hidden">
         <input
           type="text"
-          placeholder={car?.title}
-          value={car?.carname}
+          placeholder={car.carname}
+          value={car.carname}
           name="carname"
           onChange={handlechange}
         />

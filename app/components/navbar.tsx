@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +16,7 @@ import { FaCar, FaInfoCircle, FaMapMarkedAlt, FaTaxi } from "react-icons/fa";
 import { FaHouseChimney } from "react-icons/fa6";
 
 export default function NavBar() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleClick = () => setOpen(!open);
   return (
     <nav className=" w-full h-20 shadow-md bg-white">
@@ -59,7 +60,7 @@ export default function NavBar() {
               </li>
             </Link>
             <Link href="/contact">
-              <li className="mr-9 capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
+              <li className=" capitalletter hover:text-blue-700 hover:border-b font-semibold text-lg">
                 Contact Us
               </li>
             </Link>

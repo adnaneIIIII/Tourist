@@ -5,11 +5,7 @@ function Carsection() {
   const [data, setData] = useState<any[]>([]);
   const carList_ = async function fetchCarList() {
     try {
-      const cars = await fetch("api/cars", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const cars = await fetch("api/cars", { method: "GET", headers: { "Content-Type": "application/json",},
       });
       setData(await cars.json());
       console.log(data);
