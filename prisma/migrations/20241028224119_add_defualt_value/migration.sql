@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `carlists` MODIFY `id` INTEGER NOT NULL AUTO_INCREMENT;
